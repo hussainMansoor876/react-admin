@@ -1,3 +1,7 @@
+function accept(id){
+    console.log(id)
+}
+
 axios.get('https://star-rating123.herokuapp.com/get/all-company')
     .then((result) => {
         console.log('result', result)
@@ -43,9 +47,8 @@ axios.get('http://localhost:5001/get/peding-company')
                   <i class="fas fa-ellipsis-v"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                  <a class="dropdown-item" href="#" onclick=accept("${v._id}")>Accept</a>
+                  <a class="dropdown-item" href="#">Cancel</a>
                 </div>
               </div>
             </td>
