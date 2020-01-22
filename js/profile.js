@@ -7,7 +7,7 @@ axios.get('https://star-rating123.herokuapp.com/get/all-users')
             <th scope="row">
               <div class="media align-items-center">
                 <a href="#" class="avatar rounded-circle mr-3">
-                  <img alt="Image placeholder" src="../assets/img/theme/no-user-image.png">
+                  <img alt="Image placeholder" height="55" width="55" src=${v.profilePic.url}>
                 </a>
                 <div class="media-body">
                   <span class="mb-0 text-sm">${v.name}</span>
@@ -33,9 +33,7 @@ axios.get('https://star-rating123.herokuapp.com/get/all-users')
                   <i class="fas fa-ellipsis-v"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                  <a class="dropdown-item" href="#">Delete</a>
                 </div>
               </div>
             </td>
