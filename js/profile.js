@@ -11,7 +11,7 @@ axios.get('https://star-rating123.herokuapp.com/get/all-users')
             <th scope="row">
               <div class="media align-items-center">
                 <a href="#" class="avatar rounded-circle mr-3">
-                  <img alt="Image placeholder" height="55" width="55" src=${v.profilePic.url}>
+                  <img alt="Image placeholder" height="50" width="50" src=${v.profilePic.url}>
                 </a>
                 <div class="media-body">
                   <span class="mb-0 text-sm">${v.name}</span>

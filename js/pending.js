@@ -21,7 +21,7 @@ axios.get('https://star-rating123.herokuapp.com/get/peding-company')
             <th scope="row">
               <div class="media align-items-center">
                 <a href="#" class="avatar rounded-circle mr-3">
-                  <img alt="Image placeholder" src="../assets/img/theme/no-user-image.png">
+                  <img alt="Image placeholder" height="50" width="50" src=${v.profilePic.url}>
                 </a>
                 <div class="media-body">
                   <span class="mb-0 text-sm">${v.name}</span>
