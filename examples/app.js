@@ -7,7 +7,7 @@ axios.get('https://star-rating123.herokuapp.com/get/all-company')
         console.log('result', result)
     })
 
-axios.get('http://localhost:5001/get/peding-company')
+axios.get('https://star-rating123.herokuapp.com/get/peding-company')
     .then((result) => {
         const { data } = result
         console.log(data)
