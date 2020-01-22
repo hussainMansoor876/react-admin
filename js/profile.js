@@ -1,18 +1,9 @@
-function accept(id){
-    console.log(id)
-}
-
-axios.get('https://star-rating123.herokuapp.com/get/all-company')
+axios.get('https://star-rating123.herokuapp.com/get/all-users')
     .then((result) => {
-        console.log('result', result)
-    })
-
-axios.get('https://star-rating123.herokuapp.com/get/peding-company')
-    .then((result) => {
+        console.log('users', result)
         const { data } = result
-        console.log(data)
-        data['data'].map((v, i) => {
-            return document.getElementById("companyBody").innerHTML += `<tr id=${v._id}>
+        data['data'].map((v,i)=>{
+            return document.getElementById('profileBody').innerHTML += `<tr id=${v._id} key="${i}">
             <th scope="row">
               <div class="media align-items-center">
                 <a href="#" class="avatar rounded-circle mr-3">
@@ -24,21 +15,16 @@ axios.get('https://star-rating123.herokuapp.com/get/peding-company')
               </div>
             </th>
             <td>
-              ${v.contactEmail}
+              ${v.email}
             </td>
             <td>
               <span class="badge badge-dot mr-4">
-                <i class="bg-warning"></i> Monthly Pkg
+                <i></i>${v.buyPlan ? v.plan : '---'}
               </span>
             </td>
             <td>
               <div class="avatar-group">
-                <span class="badge badge-dot mr-4">${v.contactNo}</span>
-              </div>
-            </td>
-            <td>
-              <div class="d-flex align-items-center">
-                <span class="badge badge-dot mr-4">${v.url}</span>
+                <span class="badge badge-dot mr-4">${v._id}</span>
               </div>
             </td>
             <td class="text-right">
@@ -47,11 +33,12 @@ axios.get('https://star-rating123.herokuapp.com/get/peding-company')
                   <i class="fas fa-ellipsis-v"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                  <a class="dropdown-item" href="#" onclick=accept("${v._id}")>Accept</a>
-                  <a class="dropdown-item" href="#">Cancel</a>
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
                 </div>
               </div>
             </td>
-            </tr>`
+          </tr>`
         })
     })
