@@ -1,6 +1,5 @@
 function accept(id) {
-  console.log(id)
-  axios.post('http://localhost:5001/post/approved', id)
+  axios.post('https://star-rating123.herokuapp.com/post/approved', id)
     .then((result) => {
       console.log(result)
       if (result.data.success) {
