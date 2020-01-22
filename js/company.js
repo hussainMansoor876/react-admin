@@ -1,27 +1,9 @@
-function accept(id) {
-  console.log(id)
-  axios.post('http://localhost:5001/post/approved', id)
-    .then((result) => {
-      console.log(result)
-      if (result.data.success) {
-        swal("Successfully!", "Approved!", "success");
-        setTimeout(() => {
-          window.location.reload()
-        }, 1500)
-      }
-      else {
-        swal("OOPS Something Went Wrong!!!")
-      }
-    })
-}
-
-
-axios.get('https://star-rating123.herokuapp.com/get/peding-company')
+axios.get('https://star-rating123.herokuapp.com/get/approved-company')
   .then((result) => {
     const { data } = result
     console.log(data)
     data['data'].map((v, i) => {
-      return document.getElementById("companyBody").innerHTML += `<tr id=${v._id} key="${i}">
+      return document.getElementById("allCompanyBody").innerHTML += `<tr id=${v._id} key="${i}">
             <th scope="row">
               <div class="media align-items-center">
                 <a href="#" class="avatar rounded-circle mr-3">
