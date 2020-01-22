@@ -1,9 +1,13 @@
+function Delete(id) {
+  console.log(id)
+}
+
 axios.get('https://star-rating123.herokuapp.com/get/all-users')
-    .then((result) => {
-        console.log('users', result)
-        const { data } = result
-        data['data'].map((v,i)=>{
-            return document.getElementById('profileBody').innerHTML += `<tr id=${v._id} key="${i}">
+  .then((result) => {
+    console.log('users', result)
+    const { data } = result
+    data['data'].map((v, i) => {
+      return document.getElementById('profileBody').innerHTML += `<tr id=${v._id} key="${i}">
             <th scope="row">
               <div class="media align-items-center">
                 <a href="#" class="avatar rounded-circle mr-3">
@@ -33,10 +37,10 @@ axios.get('https://star-rating123.herokuapp.com/get/all-users')
                   <i class="fas fa-ellipsis-v"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                  <a class="dropdown-item" href="#">Delete</a>
+                  <a class="dropdown-item" href="#" onclick=Delete("${v._id}")>Delete</a>
                 </div>
               </div>
             </td>
           </tr>`
-        })
     })
+  })
