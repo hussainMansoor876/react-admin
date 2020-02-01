@@ -1,3 +1,22 @@
+function Delete(id) {
+  console.log(id)
+  axios.post('http://localhost:5001/del/company', { _id: id })
+    .then((result) => {
+      if (result.data.success) {
+        swal("Successfully!", "Deleted!", "success");
+        setTimeout(() => {
+          window.location.reload()
+        }, 1500)
+      }
+      else {
+        swal("OOPS Something Went Wrong!!!")
+      }
+    })
+    .catch((e) => {
+      swal("OOPS Something Went Wrong!!!")
+    })
+}
+
 axios.get('https://star-rating123.herokuapp.com/get/approved-company')
   .then((result) => {
     const { data } = result
@@ -33,8 +52,7 @@ axios.get('https://star-rating123.herokuapp.com/get/approved-company')
                   <i class="fas fa-ellipsis-v"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                  <a class="dropdown-item" href="#" onclick=accept("${v._id}")>Accept</a>
-                  <a class="dropdown-item" href="#">Cancel</a>
+                  <a class="dropdown-item" href="#" onclick=Delete("${v._id}")>Delete</a>
                 </div>
               </div>
             </td>
