@@ -36,6 +36,11 @@ axios.get('https://star-rating123.herokuapp.com/get/approved-company')
               ${v.contactEmail}
             </td>
             <td>
+              <span class="badge badge-dot mr-4">
+                <i class="bg-warning"></i> ${v.user.plan}
+              </span>
+            </td>
+            <td>
               <div class="avatar-group">
                 <span class="badge badge-dot mr-4">${v.contactNo}</span>
               </div>
