@@ -15,6 +15,25 @@ function accept(id) {
     })
 }
 
+function Delete(id) {
+  console.log(id)
+  axios.post('https://star-rating123.herokuapp.com/del/company', { _id: id })
+    .then((result) => {
+      if (result.data.success) {
+        swal("Successfully!", "Deleted!", "success");
+        setTimeout(() => {
+          window.location.reload()
+        }, 1500)
+      }
+      else {
+        swal("OOPS Something Went Wrong!!!")
+      }
+    })
+    .catch((e) => {
+      swal("OOPS Something Went Wrong!!!")
+    })
+}
+
 
 axios.get('https://star-rating123.herokuapp.com/get/peding-company')
   .then((result) => {
@@ -57,7 +76,7 @@ axios.get('https://star-rating123.herokuapp.com/get/peding-company')
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                   <a class="dropdown-item" href="#" onclick=accept("${v._id}")>Accept</a>
-                  <a class="dropdown-item" href="#">Cancel</a>
+                  <a class="dropdown-item" href="#" onclick=Delete("${v._id}")>Cancel</a>
                 </div>
               </div>
             </td>
