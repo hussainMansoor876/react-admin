@@ -1,5 +1,19 @@
 function Delete(id) {
-  console.log(id)
+  axios.post('https://star-rating123.herokuapp.com/del/user', { _id: id })
+    .then((result) => {
+      if (result.data.success) {
+        swal("Successfully!", "Deleted!", "success");
+        setTimeout(() => {
+          window.location.reload()
+        }, 1500)
+      }
+      else {
+        swal("OOPS Something Went Wrong!!!")
+      }
+    })
+    .catch((e) => {
+      swal("OOPS Something Went Wrong!!!")
+    })
 }
 
 axios.get('https://star-rating123.herokuapp.com/get/all-users')

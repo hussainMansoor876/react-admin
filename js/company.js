@@ -1,5 +1,4 @@
 function Delete(id) {
-  console.log(id)
   axios.post('https://star-rating123.herokuapp.com/del/company', { _id: id })
     .then((result) => {
       if (result.data.success) {
