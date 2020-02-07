@@ -1,3 +1,22 @@
+function Delete(id) {
+    axios.post('http://localhost:5001/del/company', { _id: id })
+        .then((result) => {
+            if (result.data.success) {
+                swal("Successfully!", "Deleted!", "success");
+                setTimeout(() => {
+                    window.location.reload()
+                }, 1500)
+            }
+            else {
+                swal("OOPS Something Went Wrong!!!")
+            }
+        })
+        .catch((e) => {
+            swal("OOPS Something Went Wrong!!!")
+        })
+}
+
+
 axios.get('http://localhost:5001/get/peding-reviews')
     .then((response) => {
         const { data } = response
@@ -29,8 +48,8 @@ axios.get('http://localhost:5001/get/peding-reviews')
                   <i class="fas fa-ellipsis-v"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                  <a class="dropdown-item" href="#">Accept</a>
-                  <a class="dropdown-item" href="#">Delete</a>
+                  <a class="dropdown-item" href="javascript:void:(0)">Accept</a>
+                  <a class="dropdown-item" href="javascript:void:(0)" onclick=Delete("${v._id}">Delete</a>
                 </div>
               </div>
             </td>
