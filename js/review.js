@@ -16,6 +16,22 @@ function Delete(id) {
         })
 }
 
+function accept(id) {
+    axios.post('https://star-rating123.herokuapp.com/post/approved', { id: id })
+        .then((result) => {
+            console.log(result)
+            if (result.data.success) {
+                swal("Successfully!", "Approved!", "success");
+                setTimeout(() => {
+                    window.location.reload()
+                }, 1500)
+            }
+            else {
+                swal("OOPS Something Went Wrong!!!")
+            }
+        })
+}
+
 
 axios.get('http://localhost:5001/get/peding-reviews')
     .then((response) => {
@@ -48,7 +64,7 @@ axios.get('http://localhost:5001/get/peding-reviews')
                   <i class="fas fa-ellipsis-v"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                  <a class="dropdown-item" href="javascript:void:(0)">Accept</a>
+                  <a class="dropdown-item" href="javascript:void:(0)" onclick=accept("${v._id}")>Accept</a>
                   <a class="dropdown-item" href="javascript:void:(0)" onclick=Delete("${v._id}">Delete</a>
                 </div>
               </div>
