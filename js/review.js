@@ -1,5 +1,5 @@
 function Delete(id) {
-    axios.post('http://localhost:5001/del/company', { _id: id })
+    axios.post('http://localhost:5001/del/review', { _id: id })
         .then((result) => {
             if (result.data.success) {
                 swal("Successfully!", "Deleted!", "success");
