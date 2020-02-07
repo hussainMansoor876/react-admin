@@ -17,9 +17,8 @@ axios.get('http://localhost:5001/get/peding-reviews')
               </div>
             </td>
             <td>
-              <video width="320" height="240" controls>
-                <source src="movie.mp4" type="video/mp4">
-                <source src="movie.ogg" type="video/ogg">
+              <video width="240" height="180" controls>
+                <source src=${v.video ? v.video.url : null} type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </td>
