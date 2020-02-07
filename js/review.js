@@ -17,7 +17,7 @@ function Delete(id) {
 }
 
 function accept(id) {
-    axios.post('https://star-rating123.herokuapp.com/post/approved', { id: id })
+    axios.post('http://localhost:5001/post/review-approved', { id: id })
         .then((result) => {
             console.log(result)
             if (result.data.success) {
