@@ -65,7 +65,7 @@ axios.get('http://localhost:5001/get/peding-reviews')
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                   <a class="dropdown-item" href="javascript:void:(0)" onclick=accept("${v._id}")>Accept</a>
-                  <a class="dropdown-item" href="javascript:void:(0)" onclick=Delete("${v._id}">Delete</a>
+                  <a class="dropdown-item" href="javascript:void:(0)" onclick=Delete("${v._id}")>Delete</a>
                 </div>
               </div>
             </td>
