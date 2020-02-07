@@ -1,5 +1,5 @@
 function Delete(id) {
-    axios.post('http://localhost:5001/del/review', { _id: id })
+    axios.post('https://star-rating123.herokuapp.com/del/review', { _id: id })
         .then((result) => {
             if (result.data.success) {
                 swal("Successfully!", "Deleted!", "success");
@@ -17,7 +17,7 @@ function Delete(id) {
 }
 
 function accept(id) {
-    axios.post('http://localhost:5001/post/review-approved', { id: id })
+    axios.post('https://star-rating123.herokuapp.com/post/review-approved', { id: id })
         .then((result) => {
             console.log(result)
             if (result.data.success) {
@@ -33,7 +33,7 @@ function accept(id) {
 }
 
 
-axios.get('http://localhost:5001/get/peding-reviews')
+axios.get('https://star-rating123.herokuapp.com/get/peding-reviews')
     .then((response) => {
         const { data } = response
         console.log(data)
