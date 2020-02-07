@@ -46,6 +46,13 @@ axios.get('http://localhost:5001/get/peding-reviews')
                 </div>
               </div>
             </th>
+            <th scope="row">
+              <div class="media align-items-center">
+                <div class="media-body">
+                  <span class="mb-0 text-sm">${v.companyName}</span>
+                </div>
+              </div>
+            </th>
             <td>
               <div class="align-items-center">
                 <span class="mr-2 white-spce" style="white-space: normal;">${v.feedback}</span>
